@@ -6,7 +6,7 @@ import { pokemonReducer } from './reducers/pokemons';
 import { Provider } from 'react-redux';
 import { applyMiddleware, compose, legacy_createStore as createStore } from 'redux';
 import thunk from 'redux-thunk';
-import { logger } from './middlewares/index';
+import { logger, } from './middlewares/index';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

@@ -19,6 +19,7 @@ function App() {
     }
     fetchPokemons();
   }, []);
+
   return (
     <div className="App">
       <Col span={4} offset={10}>

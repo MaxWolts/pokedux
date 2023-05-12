@@ -7,7 +7,7 @@ const PokemonCard = ({name, image, types}) => {
   return <Card
     extra={<StarOutlined/>}
     title={name}
-    cover={<img src={image} alt={name}/>}>
+    cover={<img src={image} alt={name} style={{margin:0}}/>}>
       <Meta description={types.map(type => (<span className='type--name' key={type.type.name}>{type.type.name}</span>))} />
   </Card>
 }
