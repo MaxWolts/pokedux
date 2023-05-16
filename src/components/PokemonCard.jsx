@@ -1,9 +1,9 @@
 import { StarButton } from './StarButton';
 import { Card } from 'antd';
 import Meta from 'antd/lib/card/Meta';
-import './PokemonCards.css'
 import { useDispatch } from 'react-redux';
-import { setFavorite } from '../actions/index'
+import { setFavorite } from '../slices/dataSlice'
+import './PokemonCards.css'
 
 
 const PokemonCard = ({name, image, types, id, favorite}) => {
