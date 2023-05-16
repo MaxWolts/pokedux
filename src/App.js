@@ -3,7 +3,7 @@ import { Col } from 'antd';
 import { Spin } from 'antd';
 import { PokemonList } from './components/PokemonList';
 import { Searcher } from './components/Searcher';
-import { useDispatch, useSelector } from 'react-redux';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { getPokemons } from './api/index';
 import { useEffect, useRef } from 'react';
 import { getPokemonsWithDetails, setLoading } from './actions';
@@ -11,8 +11,8 @@ import logo from './statics/logo.svg';
 
 
 function App() {
-  const pokemons = useSelector((state) => state.get('pokemons')).toJS();
-  const loading = useSelector((state) => state.get('loading'));
+  const pokemons = useSelector((state) => state.getIn(['data', 'pokemons'], shallowEqual)).toJS();
+  const loading = useSelector((state) => state.getIn(['ui', 'loading']));
   const dispatch = useDispatch();
   const ref = useRef(false)
 
