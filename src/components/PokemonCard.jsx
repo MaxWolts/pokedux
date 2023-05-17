@@ -30,11 +30,12 @@ const PokemonCard = ({name, image, types, id, favorite}) => {
   return <Card
     extra={<StarButton isFavorite={favorite} onClick={handleOnFavorite}/>}
     title={name}
+    hoverable={true}
     headStyle={titleStyle}
     style={cardStyle}
     bodyStyle={bodyStyle}
     cover={<img src={image} alt={name} style={{margin:0}}/>}>
-      <Meta style={metaStyle} description={types.map(type => (<span className='type--name' key={type.type.name}>{type.type.name}</span>))} />
+      <Meta style={metaStyle}  description={types.map(type => (<span style={{color: 'black'}} className='type--name' key={type.type.name}>{type.type.name}</span>))} />
   </Card>
 }
 

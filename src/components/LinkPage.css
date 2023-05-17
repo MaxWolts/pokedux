@@ -1,0 +1,31 @@
+.linksContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #161616;
+}
+.linksContainer a {
+  font-size: 1.4rem;
+  color: #f9f9f9;
+  padding: .8rem .6rem;
+  writing-mode: vertical-lr;
+}
+.linksContainer:after {
+  position: absolute;
+  bottom: -14px;
+  right: 0;
+  content: '';
+  border-style: solid;
+  border-width: 0 25px 15px 0;
+  border-color: transparent #161616 transparent transparent;
+}
+.linksContainer:before {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 0;
+  border-style: solid;
+  border-width: 15px 25px 0 0;
+  border-color: #161616 transparent transparent transparent;
+
+}

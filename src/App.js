@@ -7,6 +7,7 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
 import logo from './statics/logo.svg';
 import { fetchPokemonsWithDetails } from './slices/dataSlice';
+import LinkPage from './components/LinkPage';
 
 
 function App() {
@@ -34,15 +35,18 @@ function App() {
 
   return (
     <div className="App">
-      <div className='header'>
-        <img src={logo} alt='Pokedux' />
+      <div className='container'>
+        <LinkPage/>
+        <div className='header'>
+          <img src={logo} alt='Pokedux' />
+        </div>
+        <Col span={12} offset={6}>
+          <Searcher handdleSearch={handdleSearch}/>
+        </Col>
+        {loading? (<Col offset={12}>
+          <Spin spinning size='large'></Spin>
+        </Col>) : (<PokemonList pokemons={pokemonSearch? findPokemon() : pokemons}/>)}
       </div>
-      <Col span={12} offset={6}>
-        <Searcher handdleSearch={handdleSearch}/>
-      </Col>
-      {loading? (<Col offset={12}>
-        <Spin spinning size='large'></Spin>
-      </Col>) : (<PokemonList pokemons={pokemonSearch? findPokemon() : pokemons}/>)}
     </div>
   );
 };

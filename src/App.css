@@ -1,12 +1,21 @@
 @import '~antd/dist/antd.css';
 
 .App {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
   min-height: 100vh;
-  padding: 3rem 0;
   background-color: rgb(248, 242, 246);
 }
 .App img {
   margin-bottom: 3rem;
+}
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  padding: 3rem 0;
 }
 .header {
   display: flex;
