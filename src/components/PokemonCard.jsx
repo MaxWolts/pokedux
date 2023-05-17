@@ -5,6 +5,22 @@ import { useDispatch } from 'react-redux';
 import { setFavorite } from '../slices/dataSlice'
 import './PokemonCards.css'
 
+const metaStyle = {
+  fontSize: "1.3rem",
+  color: "black"
+}
+const titleStyle = {
+  fontSize: '1.4rem',
+  background: 'rgb(250 237 255)',
+}
+const cardStyle = {
+  border: '1px solid #d6c8f0',
+  borderRadius: 12,
+  overflow: 'hidden'
+}
+const bodyStyle = {
+
+}
 
 const PokemonCard = ({name, image, types, id, favorite}) => {
   const dispatch = useDispatch();
@@ -14,8 +30,11 @@ const PokemonCard = ({name, image, types, id, favorite}) => {
   return <Card
     extra={<StarButton isFavorite={favorite} onClick={handleOnFavorite}/>}
     title={name}
+    headStyle={titleStyle}
+    style={cardStyle}
+    bodyStyle={bodyStyle}
     cover={<img src={image} alt={name} style={{margin:0}}/>}>
-      <Meta description={types.map(type => (<span className='type--name' key={type.type.name}>{type.type.name}</span>))} />
+      <Meta style={metaStyle} description={types.map(type => (<span className='type--name' key={type.type.name}>{type.type.name}</span>))} />
   </Card>
 }
 
